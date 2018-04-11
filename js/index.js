@@ -14,7 +14,7 @@ function style(feature) {
         fillColor: '#57bdb2',
         weight: 2,
         opacity: 1,
-        color: '#00009c',
+        color: '#0f5b53',
         dashArray: '3',
         fillOpacity: 0.7
     };

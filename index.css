@@ -1,12 +1,29 @@
 html, body {
     height: 100%;
     margin: 0;
+    background-color: #FFE5D9;
+    font-family: font-family: "Bodoni MT", Didot, "Didot LT STD", "Book Antiqua", Garamond, "Times New Roman", serif;
+    text-align: center;
 }
 
 #map {
     width: 900px;
     height: 400px;
-    align-content: center;
+    border: 5px solid #0f5b53;
     margin: 3% auto 0 auto;
-    border: 5px solid #00009c;
 }
+
+
+#title{
+    font-weight: bold;
+    font-size: 38px;
+    margin: 5% auto 3% auto;
+}
+
+#container{
+    width: 900px;
+    margin: 0 auto 0 auto;
+    
+ 
+}
+
