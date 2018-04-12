@@ -1,3 +1,11 @@
+noUiSlider.create(slider, {
+			start: [367329.0, 3053969840.0],
+			behaviour: "drag",
+			connect: true,
+			range: { min: 367329.0, max: 3053969840.0 }
+		});
+
+
 var map = L.map('map').setView([35.3, -79.793457], 7);
 
 L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/light-v9/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZGFuaWFlc3RyYWRhIiwiYSI6ImNqZnVoMGNjNzAxanUycWxhdHQ3dnRicGMifQ.zT5HSwpsaTm0sA3cmOlZZg', {
@@ -21,11 +29,6 @@ function style(feature) {
 }
 
 var geojson = L.geoJson(nccounties, {style: style}).addTo(map);
-
-
-
-
-
 
 
 
