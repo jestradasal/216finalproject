@@ -1,4 +1,4 @@
-var nccounties = {
+{
    "type": "FeatureCollection",
    "properties": {
       "kind": "state",
@@ -8222,4 +8222,4 @@ var nccounties = {
          }
       }
    ]
-};
+}
