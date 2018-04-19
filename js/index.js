@@ -29,6 +29,9 @@ function style(feature) {
 }
 
 var geojson = L.geoJson(fake, {style: style}).addTo(map);
+var geojson = L.geoJson(us_county_geojson_2016, {style: style}).addTo(map);
+
+
 //
 //var geojson = L.geoJson(nccounties, {style: style}).addTo(map);
 
