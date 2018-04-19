@@ -34,7 +34,13 @@
         <div id="description">
         Using data from the North Carolina Public Schools website, we explore the relationship between average household income, dropout rates, percent of students on free/reduced lunch, and race and gender in each of North Carolina’s school districts and recent SAT scores. We aim to find a correlation or association in our variables in the last five years, 2012 until 2017. 
         </div>
-        
+        <div id="years">
+                <input type="radio" id="2013" name="year" value="2013" onclick="getYear()"> 2013
+                <input type="radio" id="2014" name="year" value="2014" onclick="getYear()"> 2014
+                <input type="radio" id="2015" name="year" value="2015" onclick="getYear()"> 2015
+                <input type="radio" id="2016" name="year" value="2016" onclick="getYear()"> 2016
+                <input type="radio" id="2017" name="year" value="2017" onclick="getYear()"> 2017
+            </div>
         <div id='map'>
             <div class="noUi-base" id="slider"></div>
         
@@ -51,6 +57,45 @@
             <div class='session' id='sliderbar'>
                 <input id='slider' class='row' type='range' min='0' max='23' step='1' value='12'  />
             </div>
+            <div id = "select_options">
+            <span> 
+                <input name = "independent_variable" type="checkbox" value = "Dropout rates"/>
+                <label for = "independent_variable"> Dropout Rates </label>
+            </span>
+            <span> 
+                <input name = "independent_variable" type="checkbox" value = "Free Lunch"/>
+                <label for = "independent_variable"> Free Lunch </label>
+            </span>
+            <span> 
+                <input name = "independent_variable" type="checkbox" value = "Race"/>
+                <label for = "independent_variable"> Race </label>
+            </span>
+            <span> 
+                <input name = "independent_variable" type="checkbox" value = "Median Income"/>
+                <label for = "independent_variable"> Median Income </label>
+            </span>
+            
+            <button onclick="getSelectedBoxes()"> Done </button>
+            
+        </div>
+        <!-- function used to get the values of the checked boxes-->
+        <script>
+            function getSelectedBoxes(){ //gets value of the selected boxes after pressing Done
+                //var yearChecked = document.querySelector('input[name="year"]:checked').value; //gets values of the selected year  
+                var checkBoxes = document.getElementsByName('independent_variable');
+                var boxes_selected = [];
+                for  (i = 0; i < 4; i++){
+                    if (checkBoxes[i].checked === true){
+                        boxes_selected.push(checkBoxes[i].value);
+                    }
+                }
+                alert(boxes_selected);
+            }
+            function getYear(){ //gets value of year
+                var yearChecked = document.querySelector('input[name="year"]:checked').value; //gets values of the selected year
+                //change the map based on what was clicked 
+            }
+        </script>
         </div>
 
     </body>
