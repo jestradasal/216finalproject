@@ -101,3 +101,82 @@ CREATE TABLE free_lunch
     free_2017 double precision, 
     percent_2017 double precision
 );
+
+CREATE TABLE "2013" 
+(
+    county character(25) NOT NULL,
+    Math double precision,
+    CR double precision,
+    Writing double precision,
+    Total_score double precision,
+    income double precision, 
+    lunch double precision,
+    dropout double precision,
+    hispanic double precision,
+    black double precision,
+    white double precision,
+    other double precision
+);
+
+CREATE TABLE "2014" 
+(
+    county character(25) NOT NULL,
+    Math double precision,
+    CR double precision,
+    Writing double precision,
+    Total_score double precision,
+    income double precision, 
+    lunch double precision,
+    dropout double precision,
+    hispanic double precision,
+    black double precision,
+    white double precision,
+    other double precision
+);
+
+CREATE TABLE "2015" 
+(
+    county character(25) NOT NULL,
+    Math double precision,
+    CR double precision,
+    Writing double precision,
+    Total_score double precision,
+    income double precision, 
+    lunch double precision,
+    dropout double precision,
+    hispanic double precision,
+    black double precision,
+    white double precision,
+    other double precision
+);
+
+CREATE TABLE "2016" 
+(
+    county character(25) NOT NULL,
+    Math double precision,
+    CR double precision,
+    Writing double precision,
+    Total_score double precision,
+    income double precision, 
+    lunch double precision,
+    dropout double precision,
+    hispanic double precision,
+    black double precision,
+    white double precision,
+    other double precision
+);
+
+CREATE TABLE "2017" 
+(
+    county character(25) NOT NULL,
+    Math double precision,
+    ERW double precision,
+    Total_score double precision,
+    income double precision, 
+    lunch double precision,
+    dropout double precision,
+    hispanic double precision,
+    black double precision,
+    white double precision,
+    other double precision
+);

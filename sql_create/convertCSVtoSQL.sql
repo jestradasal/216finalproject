@@ -17,9 +17,19 @@ FROM  '/media/sf_cs216/final_project/csv files/median_income.csv ' DELIMITER ','
 avg_2015,  free_2015, percent_2015, avg_2016, free_2016, percent_2016, avg_2017, free_2017, percent_2017) FROM '/home/ar358/final_project/free_lunch.csv' 
 DELIMITER ',' CSV HEADER; 
 
-\copy races(county, hispanic_2013, black_2013, white_2013, other_2013, total_2013, hispanic_2014, black_2014, white_2014, other_2014, total_2014, hispanic_2015, 
-black_2015, white_2015, other_2015, total_2015, hispanic_2016, black_2016, white_2016, other_2016, total_2016, hispanic_2017, black_2017, white_2017, other_2017, total_2017)
+\copy races(county, hispanic_2013, black_2013, white_2013, other_2013, total_2013, 
+hispanic_2014, black_2014, white_2014, other_2014, total_2014, 
+hispanic_2015, black_2015, white_2015, other_2015, total_2015, 
+hispanic_2016, black_2016, white_2016, other_2016, total_2016, 
+hispanic_2017, black_2017, white_2017, other_2017, total_2017)
 FROM '/home/ar358/final_project/races_2013-2017.csv' DELIMITER ',' CSV HEADER;
 
--- if error invalid byte sequence for encoding UTF8: 
--- SET client_encoding = 'ISO_8859_5';
+\copy "2013" (county, math, cr, writing, total_score, income, lunch, dropout, hispanic, black, white, other) FROM  '/home/ar358/final_project/csv_files/2013.csv' DELIMITER ',' CSV HEADER;
+
+\copy "2014" (county, math, cr, writing, total_score, income, lunch, dropout, hispanic, black, white, other) FROM '/home/ar358/final_project/csv_files/2014.csv' DELIMITER ',' CSV HEADER;
+
+\copy "2015" (county, math, cr, writing, total_score, income, lunch, dropout, hispanic, black, white, other) FROM  '/home/ar358/final_project/csv_files/2015.csv' DELIMITER ',' CSV HEADER;
+
+\copy "2016" (county, math, cr, writing, total_score, income, lunch, dropout, hispanic, black, white, other) FROM  '/home/ar358/final_project/csv_files/2016.csv' DELIMITER ',' CSV HEADER;
+
+\copy "2017" (county, math, erw, total_score, income, lunch, dropout, hispanic, black, white, other) FROM  '/home/ar358/final_project/csv_files/2017.csv' DELIMITER ',' CSV HEADER;
