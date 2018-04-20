@@ -1,16 +1,8 @@
-
-
 var map = L.map('map').setView([35.3, -79.793457], 7);
 
-//L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/light-v9/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiZGFuaWFlc3RyYWRhIiwiYSI6ImNqZnVoMGNjNzAxanUycWxhdHQ3dnRicGMifQ.zT5HSwpsaTm0sA3cmOlZZg', {
-//		maxZoom: 18,
-//		attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
-//			'<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-//			'Imagery © <a href="http://mapbox.com">Mapbox</a>',
-//		id: 'mapbox.light'
-//	}).addTo(map);
-
-
+var current_year = "2013";
+//var array_of_maps = [us_county_geojson_2016, fake];
+var current_map = fake;
 
 
 function getSat(d) {
@@ -24,55 +16,16 @@ function getSat(d) {
                       '#FFEDA0';
 }
 
-//function select(id) {
-//    for (var i = 1;i <= 5; i++)
-//    {
-//        document.getElementById("checkbox" + i) = false;
-//    }
-//    document.getElementById(id).checked = true;
-//}
-
-//function select(id) {
-//    var checkboxes = document.getElementsByName('independent_variable')
-//    checkboxes.forEach((item) => {
-//        if (item == checkbox) item.checked = false
-//    })
-//}
-
 function checked() {
     var subject = total;
     var box = document.getElementsByName('independent_variable');
     for (i = 0; i < 5; i++) {
         if(box[i].checked) {
-            subject = box[i].value;
-    
-}  
-        /*else if(document.getElementById('independent_variable').checked) {
-  //Female radio button is checked
-}*/
-//    else value = total;
-        
-    }
-    
+            subject = box[i].value;    
+}         
+    } 
     return subject;
-    
-  // If the checkbox is checked, display the output text
-//  if (checkBox.checked == true){
-//    text.style.display = "block";
-//  } if (checkBox.checked == true){
-//    text.style.display = "block";
-//  } if (checkBox.checked == true){
-//    text.style.display = "block";
-//  } if (checkBox.checked == true){
-//    text.style.display = "block";
-//  } if (checkBox.checked == true){
-//    text.style.display = "block";
-//  } 
-//}
 }
-
-
-
 
 function setTotal(feature) {
     
@@ -133,36 +86,62 @@ function setERW(feature) {
 }
 
 
+function getYear(sliderYear){
+    if (sliderYear === "2013") {
+        current_year = "2013";
+//        alert("current year is now " + current_year);
+    }
+    if (sliderYear === "2014") {
+        current_year = "2014";
+//        alert("current year is now " + current_year);
+    }
+    
+    if (sliderYear === "2015") {
+        current_year = "2015";
+//        alert("current year is now " + current_year);
+    }
+    if (sliderYear === "2016") {
+        current_year = sliderYear;
+        current_map = us_county_geojson_2016;
+//        alert("current map is now " + current_map);
+    }
+    
+    if (sliderYear === "2017") {
+        current_year = "2017";
+        current_map = fake;
+//        alert("current map is now " + current_map);
+        
+    }
+}
 
-
-
-
-function total(){
+var sat2017 = L.geoJson(current_map, {style: setTotal}).addTo(map);
+//var sat2016 = L.geoJson(us_county_geojson_2016, {style: satColor}).addTo(map);
+function switchSAT(){
     var box = document.getElementsByName('independent_variable');
     var v;
     for (var i = 0; i < 5; i++) {
         if(box[i].checked) {
            if (box[i].value === "total") {
             map.removeLayer(sat2017);
-            sat2017 = L.geoJson(fake, {style: setTotal}).addTo(map);
+            sat2017 = L.geoJson(current_map, {style: setTotal}).addTo(map);
             map.addLayer(sat2017);
             break; }
             
             if (box[i].value === "Math") {
             map.removeLayer(sat2017);
-            sat2017 = L.geoJson(fake, {style: setMath}).addTo(map);
+            sat2017 = L.geoJson(current_map, {style: setMath}).addTo(map);
             map.addLayer(sat2017);
             break; }
             
             if (box[i].value === "CR") {
             map.removeLayer(sat2017);
-            sat2017 = L.geoJson(fake, {style: setCR}).addTo(map);
+            sat2017 = L.geoJson(current_map, {style: setCR}).addTo(map);
             map.addLayer(sat2017);
             break; }
             
             if (box[i].value === "writing") {
             map.removeLayer(sat2017);
-            sat2017 = L.geoJson(fake, {style: setWriting}).addTo(map);
+            sat2017 = L.geoJson(current_map, {style: setWriting}).addTo(map);
             map.addLayer(sat2017);
             break; }
   
@@ -170,43 +149,7 @@ function total(){
             
 }}
 
-//function years(theval){
-//    var slider = theval;
-//    var year = slider.value;
-//     if (slider === "2016") {
-//            map.removeLayer(sat2017);
-//            sat2017 = L.geoJson(us_county_geojson_2016).addTo(map);
-//            map.addLayer(sat2017);
-//            break; }
-//    if (slider === "2017") {
-//            map.removeLayer(sat2017);
-//            sat2017 = L.geoJson(fake).addTo(map);
-//            map.addLayer(sat2017);
-//            break; 
-//    }
-//    
-//}
-//
 
-function year(theyears){
-    if (thevalue === "2017") {
-        month("fake");
-    }
-    if (thevalue === "2016") {
-        return month("us_county_geojson_2016");
-    }
-}
-
-
-var themap = function month(year){
-    
-    if (year === 2017) {
-        return "fake";
-    }
-    if (year === 2016) {
-        return "us_county_geojson_2016";
-    }
-}
 
 
 var years = [
@@ -225,8 +168,6 @@ var years = [
 ];
 
 
-var sat2017 = L.geoJson(fake, {style: setTotal}).addTo(map);
-var sat2016 = L.geoJson(us_county_geojson_2016);
 
 
 //$('body').on('click', 'radio', function (radio) {

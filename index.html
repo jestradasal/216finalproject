@@ -45,7 +45,9 @@
           
         
         <script type="text/javascript" src="js/nccounties.js"></script>
-            <script type="text/javascript" src="js/fake.js"></script>
+        <script type="text/javascript" src="js/fake.js"></script>
+            <script type="text/javascript" src="js/us_county_geojson_2016.js"></script>
+            
 
         <script type="text/javascript" src="js/index.js"></script>
             
@@ -55,18 +57,18 @@
             
             
            <div class='session' id='sliderbar'>
-                <input id='slider' class='row' type='range' min="2013" max="2017" value="2013" step='1' oninput="year(this.value)"/>
+                <input id='slider' class='row' type='range' min="2013" max="2017" value="2013" step='1' oninput="getYear(this.value)"/>
             </div>
-            
+
             
            <div id = "select_options">
              
             <span> 
-                <input name = "independent_variable" type="radio" value = "total" id="total" onclick="total()"/>
+                <input name = "independent_variable" type="radio" value = "total" id="total" onclick="switchSAT()"/>
                 <label for = "independent_variable"> Average SAT</label>
             </span>
             <span> 
-                <input name = "independent_variable" type="radio" value = "Math" id="Math" onclick="total()"/>
+                <input name = "independent_variable" type="radio" value = "Math" id="Math" onclick="switchSAT()"/>
                 <label for = "independent_variable">Math SAT</label>
             </span>
             <span> 

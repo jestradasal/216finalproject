@@ -1,4 +1,4 @@
-var us_county_geojson = {
+var us_county_geojson_2016 = {
 	"type": "FeatureCollection",
 	"crs": {
 		"type": "name",
