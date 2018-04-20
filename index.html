@@ -42,7 +42,7 @@
                 <input type="radio" id="2017" name="year" value="2017" onclick="getYear()"> 2017
             </div>
         <div id='map'>
-            <div class="noUi-base" id="slider"></div>
+          
         
         <script type="text/javascript" src="js/nccounties.js"></script>
             <script type="text/javascript" src="js/fake.js"></script>
@@ -51,54 +51,46 @@
             
 
             </div>
+             
             
             
-            
-            <div class='session' id='sliderbar'>
-                <input id='slider' class='row' type='range' min='0' max='23' step='1' value='12'  />
+           <div class='session' id='sliderbar'>
+                <input id='slider' class='row' type='range' min="2013" max="2017" value="2013" step='1' oninput="year(this.value)"/>
             </div>
-            <div id = "select_options">
-            <span> 
-                <input name = "independent_variable" type="checkbox" value = "Dropout rates"/>
-                <label for = "independent_variable"> Dropout Rates </label>
-            </span>
-            <span> 
-                <input name = "independent_variable" type="checkbox" value = "Free Lunch"/>
-                <label for = "independent_variable"> Free Lunch </label>
-            </span>
-            <span> 
-                <input name = "independent_variable" type="checkbox" value = "Race"/>
-                <label for = "independent_variable"> Race </label>
-            </span>
-            <span> 
-                <input name = "independent_variable" type="checkbox" value = "Median Income"/>
-                <label for = "independent_variable"> Median Income </label>
-            </span>
             
-            <button onclick="getSelectedBoxes()"> Done </button>
+            
+           <div id = "select_options">
+             
+            <span> 
+                <input name = "independent_variable" type="radio" value = "total" id="total" onclick="total()"/>
+                <label for = "independent_variable"> Average SAT</label>
+            </span>
+            <span> 
+                <input name = "independent_variable" type="radio" value = "Math" id="Math" onclick="total()"/>
+                <label for = "independent_variable">Math SAT</label>
+            </span>
+            <span> 
+                <input name = "independent_variable" type="radio" value = "CR" id="CR" onclick="clickcheck()"/>
+                <label for = "independent_variable"> Critical Reading</label>
+            </span>
+            <span> 
+                <input name = "independent_variable" type="radio" value = "writing" id="writing" onclick="clickcheck()"/>
+                <label for = "independent_variable"> Writing </label>
+            </span>
+<!--
+            <span> 
+                <input name = "independent_variable" type="radio" value = "Median Income" id="checkbox5" />
+                <label for = "median"> Median Income </label>
+            </span>
+-->
+            
+<!--            <button onclick="getSelectedBoxes()"> Done </button>-->
             
         </div>
         <!-- function used to get the values of the checked boxes-->
-        <script>
-            function getSelectedBoxes(){ //gets value of the selected boxes after pressing Done
-                //var yearChecked = document.querySelector('input[name="year"]:checked').value; //gets values of the selected year  
-                var checkBoxes = document.getElementsByName('independent_variable');
-                var boxes_selected = [];
-                for  (i = 0; i < 4; i++){
-                    if (checkBoxes[i].checked === true){
-                        boxes_selected.push(checkBoxes[i].value);
-                    }
-                }
-                alert(boxes_selected);
-            }
-            function getYear(){ //gets value of year
-                var yearChecked = document.querySelector('input[name="year"]:checked').value; //gets values of the selected year
-                //change the map based on what was clicked 
-            }
-        </script>
+       
         </div>
 
     </body>
 </html>
-
 
