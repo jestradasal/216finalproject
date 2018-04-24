@@ -19,7 +19,8 @@
     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
         <link rel="stylesheet" href="index.css"/>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/8.0.2/nouislider.min.css" />
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"></script>
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/8.0.2/nouislider.js"></script>
 
     </head>
@@ -34,21 +35,19 @@
         <div id="description">
         Using data from the North Carolina Public Schools website, we explore the relationship between average household income, dropout rates, percent of students on free/reduced lunch, and race and gender in each of North Carolina’s school districts and recent SAT scores. We aim to find a correlation or association in our variables in the last five years, 2012 until 2017. 
         </div>
-        <div id="years">
-                <input type="radio" id="2013" name="year" value="2013" onclick="getYear()"> 2013
-                <input type="radio" id="2014" name="year" value="2014" onclick="getYear()"> 2014
-                <input type="radio" id="2015" name="year" value="2015" onclick="getYear()"> 2015
-                <input type="radio" id="2016" name="year" value="2016" onclick="getYear()"> 2016
-                <input type="radio" id="2017" name="year" value="2017" onclick="getYear()"> 2017
-            </div>
+   
         <div id='map'>
           
         
         <script type="text/javascript" src="js/nccounties.js"></script>
-        <script type="text/javascript" src="js/fake.js"></script>
-            <script type="text/javascript" src="js/us_county_geojson_2016.js"></script>
             
-
+            
+            <script type="text/javascript" src="us_county_geojson_2013.js"></script>
+            <script type="text/javascript" src="us_county_geojson_2014.js"></script>
+            <script type="text/javascript" src="us_county_geojson_2015.js"></script>
+            <script type="text/javascript" src="us_county_geojson_2016.js"></script>
+            <script type="text/javascript" src="us_county_geojson_2017.js"></script>
+                
         <script type="text/javascript" src="js/index.js"></script>
             
 
@@ -57,9 +56,9 @@
             
             
            <div class='session' id='sliderbar'>
-                <input id='slider' class='row' type='range' min="2013" max="2017" value="2013" step='1' oninput="getYear(this.value)"/>
+                <input id='slider' class='row' type='range' min="2013" max="2017" value="2013" step='1' oninput="year(this.value)"/>
             </div>
-
+            
             
            <div id = "select_options">
              
@@ -72,12 +71,16 @@
                 <label for = "independent_variable">Math SAT</label>
             </span>
             <span> 
-                <input name = "independent_variable" type="radio" value = "CR" id="CR" onclick="clickcheck()"/>
+                <input name = "independent_variable" type="radio" value = "CR" id="CR" onclick="switchSAT()"/>
                 <label for = "independent_variable"> Critical Reading</label>
             </span>
             <span> 
-                <input name = "independent_variable" type="radio" value = "writing" id="writing" onclick="clickcheck()"/>
+                <input name = "independent_variable" type="radio" value = "writing" id="writing" onclick="switchSAT()"/>
                 <label for = "independent_variable"> Writing </label>
+            </span>
+               <span> 
+                <input name = "independent_variable" type="radio" value = "ERW" id="ERW" onclick="switchSAT()"/>
+                <label for = "independent_variable"> ERW (2017 ONLY) </label>
             </span>
 <!--
             <span> 
