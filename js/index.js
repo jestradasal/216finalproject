@@ -11,14 +11,28 @@ var current_map = us_county_geojson_2013;
 
 //functions to change color of counties
 function getSat(d) {
+    //Fix: create a better conversion
+    if (current_year === "2017") {
+        
+        return d > 1200 ? '#800026' :
+               d > 1100  ? '#BD0026' :
+               d > 1000  ? '#E31A1C' :
+               d > 900  ? '#FC4E2A' :
+               d > 800   ? '#FD8D3C' :
+               d > 700   ? '#FEB24C' :
+               d > 600   ? '#FED976' :
+                          '#FFEDA0';
+    }
+    
     return d > 2415 ? '#800026' :
-           d > 2070  ? '#BD0026' :
-           d > 1725  ? '#E31A1C' :
-           d > 1380  ? '#FC4E2A' :
-           d > 1035   ? '#FD8D3C' :
-           d > 690   ? '#FEB24C' :
-           d > 345   ? '#FED976' :
-                      '#FFEDA0';
+       d > 2070  ? '#BD0026' :
+       d > 1725  ? '#E31A1C' :
+       d > 1380  ? '#FC4E2A' :
+       d > 1035   ? '#FD8D3C' :
+       d > 690   ? '#FEB24C' :
+       d > 345   ? '#FED976' :
+                  '#FFEDA0';    
+    
 }
 function getMath(d) {
     return d > 690 ? '#800026' :
@@ -87,9 +101,10 @@ function setTotal(feature) {
             fillOpacity: 1
         };
         
-    }
-    
+    } 
     if (current_year === "2017"){
+
+        
         return {
             fillColor: getSat(Number(feature.properties.Total_2017)),
             weight: 1,
@@ -370,10 +385,6 @@ function resetHighlight(e) {
 	}
 
 
-
-
-//functions to get SAT Score 
-// fix: (make sure to switch for each year)
 function onEachTotal(feature, layer) {
     if (current_year === "2013"){
         layer.on({
