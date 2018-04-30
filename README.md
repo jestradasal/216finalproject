@@ -31,7 +31,7 @@ using Python. To view our database, open the database.ipynb file. To view our li
 
 ### 2.2 Viewing the Map
 
-To view the map, copy and paste the following link into your browser: [Map Visualization](jestradasal.github.io).
+To view the map, copy and paste the following link into your browser: [Map Visualization](https://jestradasal.github.io/216finalproject/).
 
 
 
