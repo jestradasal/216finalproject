@@ -14,9 +14,9 @@ Each of our dataset was first obtained by downloading data online as Excel files
 
 We created a database called north_carolina by running the following command. 
 
-'''sql
+```sql
 CREATE DATABASE north_carolina;
-''' 
+```
 
 The following files that were used to create our tables are stored in our sql_create folder. create_tables.sql have all of our CREATE TABLE SQL expressions and convertCSVtoSQL.sql converts our CSV files to these tables.
 
