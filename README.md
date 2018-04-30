@@ -4,19 +4,21 @@ Using data from the North Carolina Public Schools website, we explore the relati
 
 ***
 
-## 1. Creating the Database
+## 1. Recreating the Database
 
 ### 1.1 Converting from Excel to CSV
 
 Each of our dataset was first obtained by downloading data online as Excel files. We then cleaned the dataset and converted them to CSV files so that we can copy the data into our postgreSQL database.
 
-### 1.2 Creating the Database
+### 1.2 Using PostgreSQL
 
 We created a database called north_carolina by running the following command. 
 
 ```sql
 CREATE DATABASE north_carolina;
 ```
+
+### 1.3 Creating Tables and using /copy
 
 The following files that were used to create our tables are stored in our sql_create folder. create_tables.sql has all of our ```CREATE TABLE ``` expressions and convertCSVtoSQL.sql converts our CSV files to these tables.
 
