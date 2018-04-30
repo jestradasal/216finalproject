@@ -22,14 +22,16 @@ The following files that were used to create our tables are stored in our sql_cr
 
 ***
 
-## 2 Our data using Python 
+## 2. Our data using Python 
 
 ### 2.1 Jupyter Notebook Files 
 
 We have several Jupyter notebook files which connected our postgreSQL database so we can wrangle with the data
-using Python. To view our database, open the database.ipynb file. To view our linear regression models, open the mlr.ipynb file. 
+using Python. To view our database, open the database.ipynb file. To view our linear regression models and graphs, open the mlr.ipynb file. 
 
-### 2.2 Viewing the Map
+***
+
+## 3. Viewing the Map
 
 To view the map, copy and paste the following link into your browser: [Map Visualization](https://jestradasal.github.io/216finalproject/).
 
