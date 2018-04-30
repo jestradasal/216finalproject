@@ -11,53 +11,91 @@
         <link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
 
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin=""/>
-        <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js" integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw==" crossorigin=""></script>
         
+        <!-- CSS for site -->
+        <link rel="stylesheet" href="index.css"/>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" />
+        
+        <!-- JS for leaflet -->
+        <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js" integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw==" crossorigin=""></script>
         <script src="../dist/leaflet-slider.js"></script>
         <script src="SliderControl.js"></script>
         <script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
+<<<<<<< HEAD
     <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
     <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
         <link rel="stylesheet" href="index.css"/>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/8.0.2/nouislider.min.css" />
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/8.0.2/nouislider.js"></script>
         <script src="https://cdn.plot.ly/plotly-latest.min.js" async></script>
+=======
+        <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+        <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+        
+        <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/8.0.2/nouislider.js"></script>
+>>>>>>> 8bc125c7172e45a02722c4b68624e48f901825d4
 
+        <!-- JS for displaying the different maps -->
+        <script type="text/javascript" src="js/nccounties.js"></script>
+        <script type="text/javascript" src="js/us_county_geojson_2013.js"></script>
+        <script type="text/javascript" src="js/us_county_geojson_2014.js"></script>
+        <script type="text/javascript" src="js/us_county_geojson_2015.js"></script>
+        <script type="text/javascript" src="js/us_county_geojson_2016.js"></script>
+        <script type="text/javascript" src="js/us_county_geojson_2017.js"></script>
     </head>
 
     <body>
-    
-        <div id="container">
 
-       <div id="title">SAT Scores From North Carolina Public High Schools</div> 
+        <div id="title">SAT Scores From North Carolina Public High Schools</div> 
         
-       
         <div id="description">
-        Using data from the North Carolina Public Schools website, we explore the relationship between average household income, dropout rates, percent of students on free/reduced lunch, and race and gender in each of North Carolina’s school districts and recent SAT scores. We aim to find a correlation or association in our variables in the last five years, 2012 until 2017. 
+            Using data from the North Carolina Public Schools website, we explore the relationship between average household income, dropout rates, percent of students on free/reduced lunch, and race and gender in each of North Carolina’s school districts and recent SAT scores. We aim to find a correlation or association in our variables in the last five years, 2012 until 2017. 
         </div>
-        <div id="years">
-                <input type="radio" id="2013" name="year" value="2013" onclick="getYear()"> 2013
-                <input type="radio" id="2014" name="year" value="2014" onclick="getYear()"> 2014
-                <input type="radio" id="2015" name="year" value="2015" onclick="getYear()"> 2015
-                <input type="radio" id="2016" name="year" value="2016" onclick="getYear()"> 2016
-                <input type="radio" id="2017" name="year" value="2017" onclick="getYear()"> 2017
-            </div>
-        <div id='map'>
-          
-        
-        <script type="text/javascript" src="js/nccounties.js"></script>
-            <script type="text/javascript" src="js/fake.js"></script>
 
-        <script type="text/javascript" src="js/index.js"></script>
+        <div id="container"> 
             
+            <div id="formatted">
+                
+                <div id='map' class="map"></div>
+              
+                <script type="text/javascript" src="js/index.js"></script>
+            
+            
+                <div id="information">
+                    
+                    <div class='session' id='sliderbar'>
+                        <p> current year: <span id = "show_year"> 2013</span></p>
+                        <input id='slider' class='row' type='range' min="2013" max="2017" value="2013" step='1' oninput="getYear(this.value)"/>
+                    </div>
 
+
+                    <div id = "select_options">
+                        <span> 
+                            <input name = "independent_variable" type="radio" value = "total" id="total" onclick="switchSAT()"/>
+                            <label for = "independent_variable"> Average SAT</label>
+                        </span>
+                        <span> 
+                            <input name = "independent_variable" type="radio" value = "Math" id="Math" onclick="switchSAT()"/>
+                            <label for = "independent_variable">Math SAT</label>
+                        </span>
+                        <span> 
+                            <input name = "independent_variable" type="radio" value = "CR" id="CR" onclick="switchSAT()"/>
+                            <label for = "independent_variable"> Critical Reading</label>
+                        </span>
+                        <span> 
+                            <input name = "independent_variable" type="radio" value = "writing" id="writing" onclick="switchSAT()"/>
+                            <label for = "independent_variable"> Writing </label>
+                        </span>
+                        <span> 
+                            <input name = "independent_variable" type="radio" value = "ERW" id="ERW" onclick="switchSAT()"/>
+                            <label for = "independent_variable"> ERW (2017 ONLY) </label>
+                        </span>
+                    </div>
+                    
+                </div>
             </div>
-             
-            
-            
-           <div class='session' id='sliderbar'>
-                <input id='slider' class='row' type='range' min="2013" max="2017" value="2013" step='1' oninput="year(this.value)"/>
-            </div>
+<<<<<<< HEAD
             
             
            <div id = "select_options">
@@ -107,6 +145,10 @@
             
             </script>
         </div>
+=======
+            <div class="c" id="control">Hover or click on a County</div>
+        
+>>>>>>> 8bc125c7172e45a02722c4b68624e48f901825d4
         </div>
         
         

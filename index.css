@@ -1,19 +1,21 @@
 html, body {
     height: 100%;
-    margin: 0;
+    margin: 0 0 0 1%;
     background-color: #FFE5D9;
-    font-family: font-family: "Bodoni MT", Didot, "Didot LT STD", "Book Antiqua", Garamond, "Times New Roman", serif;
+    font-family: sans-serif; 
     text-align: center;
-    
 }
 
 #map {
-    width: 900px;
-    height: 400px;
+    width: 825px;
+    height: 420px;
+    margin-top: 0;
 /*    border: 5px solid black;*/
-    margin: 3% auto 0 auto;
+/*    margin: 3% auto 0 auto;*/
     background-color: #FFE5D9;
+    
 }
+
 
 
 #title{
@@ -22,24 +24,116 @@ html, body {
     margin: 5% auto 3% auto;
 }
 
-#container{
-    width: 900px;
-    margin: 0 auto 0 auto;
+#information{
+   margin: 3%;
+
+  
 }
+
+
+#formatted{
+    float: left;
+    display: inline-block;
+}
+ 
 
 #slider{
-    width: 500px;
+    width: 590px;
+    height: 30px;
+    margin: auto;
+
 }
 
-.layerControl {
-    line-height: 18px;
-    color: #555;
+
+#select_options{
+    margin: 1%;
 }
-.layerControl i {
-    width: 50px;
-    height: 50px;
+#control {
+    height: 200px;
+    width: 200px;
+    padding: 10px;
+    font: 12px sans-serif;
+    background: white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.9);
+    border-radius: 5px;
+    text-align: left;
     float: left;
-    margin-right: 8px;
-    opacity: 0.7;
+    display: inline-block;
+    margin: 1% 0 0 3%;
+    bottom: 0;
+
+
+    
 }
+#control h4 {
+    margin: 0 0 10px 0;
+    color: black;
+    font-size: 22px;
+}
+
+.legend {
+    padding: 6px 8px;
+    font: 16px sans-serif;
+    background: white;
+    background: rgba(255,255,255);
+    box-shadow: 0 0 15px rgba(0,0,0,0.9);
+    border-radius: 5px;
+    text-align: left;
+    
+}
+.legend h4 {
+    margin: 0 0 10px 0;
+    
+    font-size: 20px;
+}
+
+/*
+.reset{
+    background-color: #FD8D3C;
+}
+*/
+#reset{
+    background-color: rgb(255,255,255,0.9);
+    padding: 10px;
+    font: sans-serif;
+    font-weight: bold;
+    font-size: 12px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 10px;
+}
+
+#container{
+    margin: 3% auto;
+    display: block;
+    width: 90%;
+}
+
+
+.info span, .info label {
+
+  display: block;
+  width: 50px;
+  height: 8px;
+  float: left;
+  text-align: center;
+  font-size: 80%
+      
+}
+
+
+.info{
+    background-color: white;
+    width: auto;
+    padding: 5px 15px 15px 15px;
+    
+    font: sans-serif;
+    font-weight: bold;
+    font-size: 12px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 10px;
+}
+
+
+
+
 
