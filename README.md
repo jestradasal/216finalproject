@@ -31,7 +31,8 @@ using Python. To view our database, open the database.ipynb file. To view our li
 
 ### 2.2 Viewing the Map
 
-To view the map, download the index.html and index.css file to wherever you want to (i.e desktop folder) and have the js folder be in that same overall folder.
+To view the map, copy and paste the following link into your browser: [Map Visualization](jestradasal.github.io).
+
 
 
 
