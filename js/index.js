@@ -11,7 +11,7 @@ var current_map = us_county_geojson_2013;
 
 //functions to change color of counties
 function getSat(d) {
-    //Fix: create a better conversion
+    //fix: is 2017 correct? 
     if (current_year === "2017") {
         
         return d > 1200 ? '#800026' :
