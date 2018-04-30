@@ -6,6 +6,11 @@ html, body {
     text-align: center;
 }
 
+#description{
+    margin-right: 5%;
+    margin-left: 5%;
+}
+
 #map {
     width: 825px;
     height: 420px;
