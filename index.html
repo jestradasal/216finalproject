@@ -21,11 +21,20 @@
         <script src="../dist/leaflet-slider.js"></script>
         <script src="SliderControl.js"></script>
         <script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
+<<<<<<< HEAD
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+        <link rel="stylesheet" href="index.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/8.0.2/nouislider.min.css" />
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/8.0.2/nouislider.js"></script>
+        <script src="https://cdn.plot.ly/plotly-latest.min.js" async></script>
+=======
         <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
         <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
         
         <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/8.0.2/nouislider.js"></script>
+>>>>>>> 8bc125c7172e45a02722c4b68624e48f901825d4
 
         <!-- JS for displaying the different maps -->
         <script type="text/javascript" src="js/nccounties.js"></script>
@@ -86,9 +95,63 @@
                     
                 </div>
             </div>
+<<<<<<< HEAD
+            
+            
+           <div id = "select_options">
+             
+            <span> 
+                <input name = "independent_variable" type="radio" value = "total" id="total" onclick="total()"/>
+                <label for = "independent_variable"> Average SAT</label>
+            </span>
+            <span> 
+                <input name = "independent_variable" type="radio" value = "Math" id="Math" onclick="total()"/>
+                <label for = "independent_variable">Math SAT</label>
+            </span>
+            <span> 
+                <input name = "independent_variable" type="radio" value = "CR" id="CR" onclick="clickcheck()"/>
+                <label for = "independent_variable"> Critical Reading</label>
+            </span>
+            <span> 
+                <input name = "independent_variable" type="radio" value = "writing" id="writing" onclick="clickcheck()"/>
+                <label for = "independent_variable"> Writing </label>
+            </span>
+<!--
+            <span> 
+                <input name = "independent_variable" type="radio" value = "Median Income" id="checkbox5" />
+                <label for = "median"> Median Income </label>
+            </span>
+-->
+            
+<!--            <button onclick="getSelectedBoxes()"> Done </button>-->
+            
+        </div>
+        <!-- function used to get the values of the checked boxes-->
+       
+            
+        <div id="MyDiv">
+            <script>
+                var trace1 = {
+                    y: [1414.0, 1395.0, 1418.0, 1251.0, 1448.0, 1526.0, 1381.0, 1178.0, 1265.0, 1434.0, 1555.0, 1485.0, 1498.0, 1474.0, 1424.0, 1541.0, 1369.0, 1453.0, 1454.0, 1469.0, 1291.0, 1511.0, 1424.0, 1261.0, 1431.0, 1367.0, 1454.0, 1504.0, 1483.0, 1538.0, 1305.0, 1426.0, 1256.0, 1478.0, 1454.0, 1424.0, 1394.0, 1389.0, 1388.0, 1299.0, 1433.0, 1147.0, 1379.0, 1472.0, 1514.0, 1222.0, 1304.0, 1318.0, 1528.0, 1465.0, 1471.0, 1319.0, 1428.0, 1335.0, 1429.0, 1482.0, 1449.0, 1349.0, 1447.0, 1473.0, 1476.0, 1277.0, 1497.0, 1355.0, 1536.0, 1195.0, 1414.0, 1537.0, 1436.0, 1315.0, 1452.0, 1337.0, 1417.0, 1433.0, 1549.0, 1410.0, 1342.0, 1233.0, 1359.0, 1405.0, 1317.0, 1369.0, 1289.0, 1399.0, 1404.0, 1456.0, 1375.0, 1531.0, 1351.0, 1524.0, 1282.0, 1572.0, 1159.0, 1198.0, 1605.0, 1377.0, 1474.0, 1402.0, 1427.0, 1448.0],
+                    x: [21.06790482, 3.784489187, 0.575539568, 57.83561644, 0.40714062, 0.280767431, 32.31534091, 81.55522164, 40.4857487, 15.93428826, 6.137718717, 5.496467666, 18.49180109, 5.697430095, 12.47390397, 6.650998825, 35.83154889, 5.203699368, 12.47844297, 1.663695781, 42.77430865, 0.913937548, 25.71521036, 31.8375059, 29.03598884, 44.71891464, 5.201560468, 2.901196997, 3.075391889, 5.988578484, 24.85327073, 50.69598423, 57.80338171, 28.83074376, 30.49332559, 20.2988233, 36.09022556, 0.167644593, 32.50559021, 38.94306386, 40.71431529, 85.57242991, 25.07468534, 0.98208361, 3.679301155, 79.41952507, 37.09856035, 27.17584369, 13.9168265, 1.278488049, 16.03369204, 43.98268398, 21.42349477, 45.10127697, 6.072008894, 0.779995412, 0.346153846, 50.99337748, 3.023656588, 41.71245064, 0.149031297, 19.87457791, 17.91068329, 49.64314036, 21.4862488, 79.95260664, 19.33314654, 16.21731473, 24.04371585, 43.78453039, 16.9196376, 30.11173184, 34.3842573, 47.79314748, 5.698129622, 3.726235741, 37.03606557, 25.37873992, 19.9016833, 18.64789015, 12.43367935, 20.44639759, 45.97813673, 12.83660429, 3.582045184, 2.421856359, 1.024590164, 4.959372373, 33.80530973, 13.13807117, 61.42102173, 24.43416189, 66.8202765, 68.60328638, 1.03626943, 34.54128918, 4.141352774, 45.27130533, 3.326810176, 0.832967996],
+                    mode: 'lines+markers',
+                    type: 'scatter'
+    
+                    }
+
+                    var data = trace1;
+
+                    Plotly.newPlot('myDiv', data);
+            
+            </script>
+        </div>
+=======
             <div class="c" id="control">Hover or click on a County</div>
         
+>>>>>>> 8bc125c7172e45a02722c4b68624e48f901825d4
         </div>
+        
+        
 
     </body>
 </html>
