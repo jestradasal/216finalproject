@@ -33,6 +33,8 @@ using Python. To view our database, open the database.ipynb file. To view our li
 
 To view the map, copy and paste the following link into your browser: [Map Visualization](https://jestradasal.github.io/216finalproject/).
 
+Once on the map, you can hover and click over any county to see information for the given county change. Also, to see the differences in years, move the slider bar and click on the different buttons to see how it changes the map. 
+
 
 
 
